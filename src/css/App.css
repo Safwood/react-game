@@ -28,3 +28,9 @@ ol, ul {
   background: #ccefff;
   padding: 50px;
 }
+
+/* ------------------------------ FULLSCREEN BEGIN ----------------------------- */
+.game:fullscreen {
+  background: #eeeeee;
+}
+/* ------------------------------ FULLSCREEN END----------------------------- */

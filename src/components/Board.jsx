@@ -7,17 +7,6 @@ const Board = (props) => {
   const [winner, setWinner] = useState(null);
   const [draw, setDraw] = useState(false);
   const [isSquareActive, setSquareActive] = useState(null);
-  // {
-  //   '0': false,
-  //   '1': false,
-  //   '2': false,
-  //   '3': false,
-  //   '4': false,
-  //   '5': false,
-  //   '6': false,
-  //   '7': false,
-  //   '8': false
-  // }
 
   const changeCurrentPlayer = (letter) => {
     setCurrentPlayer(`Current player: ${letter}`);
