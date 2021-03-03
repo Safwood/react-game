@@ -18,11 +18,9 @@
 }
 
 .Square:hover {
-  background-color:greenyellow;
-  
-
+  background-color:lightblue;
 }
 
 .Active {
-  background-color: coral;
+  background-color:limegreen;
 }

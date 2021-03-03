@@ -7,10 +7,21 @@ const Board = (props) => {
   const [winner, setWinner] = useState(null);
   const [draw, setDraw] = useState(false);
   const [isSquareActive, setSquareActive] = useState(null);
+  // {
+  //   '0': false,
+  //   '1': false,
+  //   '2': false,
+  //   '3': false,
+  //   '4': false,
+  //   '5': false,
+  //   '6': false,
+  //   '7': false,
+  //   '8': false
+  // }
 
   const changeCurrentPlayer = (letter) => {
-    setCurrentPlayer(`Current player: ${letter}`)
-  }
+    setCurrentPlayer(`Current player: ${letter}`);
+  };
 
   function calculateWinner(squares) {
     const lines = [
@@ -26,7 +37,28 @@ const Board = (props) => {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+
         return squares[a];
+      }
+    }
+    return null;
+  }
+
+  function calculateActiveSquares(squares) {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+        return [a, b, c];
       }
     }
     return null;
@@ -50,19 +82,30 @@ const Board = (props) => {
     }
   }
 
-  if (!winner && !squares.includes(null) && !draw) {
+  if (winner == null && !squares.includes(null) && !draw) {
     setDraw(true);
   }
   
 
-  let newWinner = calculateWinner(squares)
+  let newWinner = calculateWinner(squares);
+  let activeSquares = calculateActiveSquares(squares);
 
   if(newWinner && newWinner !== winner ) {
     setWinner(newWinner);
   }
- 
+
+  if(activeSquares && !isSquareActive) {
+    const currentSuares = Object.assign({}, isSquareActive);
+    activeSquares.forEach(el => {
+      currentSuares[el] = "Active"
+    })
+
+    activeSquares = null;
+    setSquareActive(currentSuares);
+  }
+
   const renderSquare = (i) => {
-    return <Square value={squares[i]} onClick={() => handleClick(i)} isActive={isSquareActive}/>;
+    return <Square value={squares[i]} onClick={() => handleClick(i)} isActive={isSquareActive ? isSquareActive[i] : ""}/>;
   }
 
   return (
