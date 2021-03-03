@@ -5,9 +5,11 @@ const Board = (props) => {
   const [currentPlayer, setCurrentPlayer] = useState('Current player: X');
   const [squares, setSquare] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
+  const [draw, setDraw] = useState(false);
+  const [isSquareActive, setSquareActive] = useState(null);
 
   const changeCurrentPlayer = (letter) => {
-      setCurrentPlayer(`Current player: ${letter}`)
+    setCurrentPlayer(`Current player: ${letter}`)
   }
 
   function calculateWinner(squares) {
@@ -19,7 +21,7 @@ const Board = (props) => {
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
-      [2, 4, 6],
+      [2, 4, 6]
     ];
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
@@ -33,30 +35,39 @@ const Board = (props) => {
   const handleClick = (i) => {
     let currentSquares = squares.slice();
 
-    if(currentPlayer === 'Current player: X') {
-      currentSquares[i] = "X";
-      setSquare(currentSquares);
-      changeCurrentPlayer("O")
+    if(winner) {
+      return
     } else {
-      currentSquares[i] = "O";
-      setSquare(currentSquares);
-      changeCurrentPlayer("X")
+      if(currentPlayer === 'Current player: X') {
+        currentSquares[i] = "X";
+        setSquare(currentSquares);
+        changeCurrentPlayer("O")
+      } else {
+        currentSquares[i] = "O";
+        setSquare(currentSquares);
+        changeCurrentPlayer("X")
+      }
     }
   }
 
-  const findWinner = () => {
-    let newWinner = calculateWinner(squares)
-    setWinner(newWinner);
-    console.log(winner)
+  if (!winner && !squares.includes(null) && !draw) {
+    setDraw(true);
   }
+  
 
+  let newWinner = calculateWinner(squares)
+
+  if(newWinner && newWinner !== winner ) {
+    setWinner(newWinner);
+  }
+ 
   const renderSquare = (i) => {
-    return <Square value={squares[i]} onClick={() => handleClick(i)} onChange={() => findWinner()}/>;
+    return <Square value={squares[i]} onClick={() => handleClick(i)} isActive={isSquareActive}/>;
   }
 
   return (
     <div>
-      <div className="Status">{currentPlayer}</div>
+      <div className="Status">{winner ? `The winner is ${winner}` : currentPlayer}</div>
       <div className="Board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -72,6 +83,7 @@ const Board = (props) => {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <div className="Draw">{draw ? "It's a draw" : null}</div>
     </div>
   );
 }

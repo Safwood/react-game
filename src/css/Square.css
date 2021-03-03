@@ -10,8 +10,19 @@
   text-align: center;
   width: 107px;
   height: 107px;
+  transition: 1s;
 }
 
 .Square:focus {
   outline: none;
+}
+
+.Square:hover {
+  background-color:greenyellow;
+  
+
+}
+
+.Active {
+  background-color: coral;
 }

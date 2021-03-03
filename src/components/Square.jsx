@@ -2,7 +2,7 @@ import React from 'react';
 
 const Square = (props) => {
   return (
-    <button className="Square" onClick={props.onClick} onChange={props.onChange}>
+    <button className={"Square" + `${props.isActive}`} onClick={props.onClick}>
       {props.value}
     </button>
   );

@@ -9,6 +9,14 @@
   font-size: 27px;
 }
 
+.Draw {
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+}
+
 .Kbd-navigation .Square:focus {
   background: #ddd;
 }

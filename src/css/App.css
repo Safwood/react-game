@@ -6,6 +6,8 @@ body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
   height: 100%;
+  background-color: #b2ebf2;
+  overflow: hidden;
 }
 
 ol, ul {
@@ -24,6 +26,5 @@ ol, ul {
 
 .Main {
   background: #ccefff;
-  height: 100%;
   padding: 50px;
 }
