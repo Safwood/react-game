@@ -1,0 +1,15 @@
+.Board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.Status {
+  margin-bottom: 10px;
+  font-size: 27px;
+}
+
+.Kbd-navigation .Square:focus {
+  background: #ddd;
+}
+
