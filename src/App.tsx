@@ -5,11 +5,11 @@ import './css/App.css';
 import './css/Square.css';
 import './css/Board.css';
 import './css/Game.css';
-import Game from "./components/Game"
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Game from "./components/Game.tsx"
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
 
-function App() {
+const App: React.FC<{}> = () => {
   return (
     <div className="App">
       <Header />
