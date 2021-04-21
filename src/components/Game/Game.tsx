@@ -1,14 +1,13 @@
 
 import React from 'react';
 import Board from "../Board/Board";
-import './Game.css';
+import style from './styles.module.css'
+
 
 const Game: React.FC = () => {
   return (
-    <div className="Game">
-      <div className="Game-board">
+    <div className={style.Game}>
         <Board />
-      </div>
     </div>
   );
 }

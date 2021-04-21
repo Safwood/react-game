@@ -1,8 +1,8 @@
 import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
 import Square from "../Square/Square";
-import './Board.css';
-
+import style from './styles.module.css';
+import { Button } from '@material-ui/core';
 
 type ThreeInARowType = {
   [key: number]: "Active" | null
@@ -24,6 +24,14 @@ const Board: React.FC = () => {
     [0, 4, 8],
     [2, 4, 6]
   ];
+
+  const resetGame = (): void => {
+    setCurrentPlayer('Current player: X');
+    setSquare(Array(9).fill(null));
+    setWinner(null);
+    setDraw(false);
+    setThreeInARow(null);
+  }
 
   const changeCurrentPlayer = (letter: "X" | "O"): void => {
     setCurrentPlayer(`Current player: ${letter}`);
@@ -68,7 +76,7 @@ const Board: React.FC = () => {
     }
   }
 
-  if (winner == null && !squares.includes(null) && !draw) {
+  if (winner === null && !squares.includes(null) && !draw) {
     setDraw(true);
   }
 
@@ -90,31 +98,38 @@ const Board: React.FC = () => {
     setThreeInARow(currentSuares);
   }
 
-  const renderSquare = (i: number) => { //TODO
+  const renderSquare = (i: number) => {
     return <Square value={squares[i]} key={i} onClick={() => handleClick(i)} isActive={isThreeInARow ? isThreeInARow[i] : ""}/>;
   }
 
   return (
     <div>
-      <Typography>
-        <div className="Status">{winner ? `The winner is ${winner}` : currentPlayer}</div>
-      </Typography>
-      <div className="Board-row">
+      <div className={style.BoardHeading}>
+        <Typography className={style.BoardStatusWrapper}>
+          <div className={style.Status}>{winner ? `The winner is ${winner}` : currentPlayer}</div>
+        </Typography>
+        <Button onClick={() => resetGame()} className={style.BoardResetButton}>
+          Reset
+        </Button>
+      </div>
+      <div className={style.BoardRow}>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
-      <div className="Board-row">
+      <div className={style.BoardRow}>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
       </div>
-      <div className="Board-row">
+      <div className={style.BoardRow}>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
-      <div className="Draw">{draw ? "It's a draw" : null}</div>
+      <Typography>
+        <div className={style.Draw}>{draw ? "It's a draw" : null}</div>
+      </Typography>
     </div>
   );
 }
