@@ -1,5 +1,8 @@
+import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
-import Square from "./Square"
+import Square from "../Square/Square";
+import './Board.css';
+
 
 type ThreeInARowType = {
   [key: number]: "Active" | null
@@ -93,7 +96,9 @@ const Board: React.FC = () => {
 
   return (
     <div>
-      <div className="Status">{winner ? `The winner is ${winner}` : currentPlayer}</div>
+      <Typography>
+        <div className="Status">{winner ? `The winner is ${winner}` : currentPlayer}</div>
+      </Typography>
       <div className="Board-row">
         {renderSquare(0)}
         {renderSquare(1)}

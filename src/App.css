@@ -1,11 +1,12 @@
 html {
   height: 100%;
+  margin: 0;
 }
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-  height: 100%;
+  margin: 0;
+  height: 100vh;
   background-color: #b2ebf2;
   overflow: hidden;
 }
@@ -15,11 +16,13 @@ ol, ul {
 }
 
 .App {
-  height: 100%;
+  height: 100vh;
+  display: flex;
+    flex-direction: column;
 }
 
 #root {
-  height: 100%;
+  height: 100vh;
   display: flex;
 	flex-direction: column;
 }
@@ -27,6 +30,7 @@ ol, ul {
 .Main {
   background: #ccefff;
   padding: 50px;
+  flex:1;
 }
 
 /* ------------------------------ FULLSCREEN BEGIN ----------------------------- */

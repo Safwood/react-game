@@ -1,21 +1,19 @@
-import './css/App.css';
-import './css/Header.css';
-import './css/Footer.css';
-import './css/App.css';
-import './css/Square.css';
-import './css/Board.css';
-import './css/Game.css';
-import Game from "./components/Game.tsx"
-import Header from './components/Header.tsx';
-import Footer from './components/Footer.tsx';
+import './App.css';
+import Game from "./components/Game/Game"
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import { theme } from "./theme";
+import { ThemeProvider } from "@material-ui/core";
 
 const App: React.FC<{}> = () => {
   return (
-    <div className="App">
-      <Header />
-      <main className="Main"><Game /></main>
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Header />
+        <main className="Main"><Game /></main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
