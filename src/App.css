@@ -18,7 +18,7 @@ ol, ul {
 .App {
   height: 100vh;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 #root {
@@ -29,7 +29,7 @@ ol, ul {
 
 .Main {
   background: #ccefff;
-  padding: 42px;
+  padding: 30px;
   flex:1;
 }
 
