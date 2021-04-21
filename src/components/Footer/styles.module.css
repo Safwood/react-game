@@ -1,0 +1,22 @@
+  .footer {
+    background-color: #b2ebf2;
+  }
+  .footerGithubs {
+    margin-right: 20px;
+  }
+  .footerGithubIcon {
+    color: #000;
+  }
+  .title {
+    flex-grow: 1;
+  }
+  .footerYear {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-right: 20px;
+    margin-left: 10px;
+  }
+ 
+  .footerLogo:hover {
+    opacity: 0.99;
+  }

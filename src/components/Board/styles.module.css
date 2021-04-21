@@ -1,0 +1,35 @@
+.BoardRow:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.BoardStatusWrapper {
+  margin-bottom: 0;
+}
+
+.Status {
+  font-size: 27px;
+}
+
+.Draw {
+  font-size: 50px;
+  color: #5c75f4;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Kbd-navigation .Square:focus {
+  background: #ddd;
+}
+
+.BoardHeading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.BoardResetButton {
+  background-color: #5c75f4 !important;
+}
