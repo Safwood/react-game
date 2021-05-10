@@ -24,3 +24,32 @@
 .Active {
   background-color:limegreen;
 }
+
+.Circle {
+  width: 100%;
+  height: 100%;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+  animation: draw 1s forwards;
+}
+
+.Cross {
+  width: 100%;
+  height: 100%;
+}
+
+.FirstLine {
+  stroke-dasharray: 92;
+  stroke-dashoffset: 92;
+  animation: draw 0.5s forwards;
+}
+
+.SecondLine {
+  stroke-dasharray: 92;
+  stroke-dashoffset: 92;
+  animation: draw 0.5s 0.5s forwards;
+}
+
+@keyframes draw {
+  100% {stroke-dashoffset: 0;}
+}

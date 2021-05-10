@@ -4,6 +4,9 @@ import Square from "../Square/Square";
 import style from './styles.module.css';
 import { Button } from '@material-ui/core';
 
+const CrossSound = new Audio(require('../../audio/cross.mp3').default);
+const CircleSound = new Audio(require('../../audio/zero.mp3').default);
+
 type ThreeInARowType = {
   [key: number]: "Active" | null
 }
@@ -65,10 +68,12 @@ const Board: React.FC = () => {
       return
     } else {
       if(currentPlayer === 'Current player: X') {
+        CrossSound.play();
         currentSquares[i] = "X";
         setSquare(currentSquares);
         changeCurrentPlayer("O")
       } else {
+        CircleSound.play();
         currentSquares[i] = "O";
         setSquare(currentSquares);
         changeCurrentPlayer("X")
