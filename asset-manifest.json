@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/react-game/static/css/main.c57e094a.chunk.css",
-    "main.js": "/react-game/static/js/main.ced56824.chunk.js",
-    "main.js.map": "/react-game/static/js/main.ced56824.chunk.js.map",
-    "runtime-main.js": "/react-game/static/js/runtime-main.c21eff8e.js",
-    "runtime-main.js.map": "/react-game/static/js/runtime-main.c21eff8e.js.map",
-    "static/js/2.3e3f561b.chunk.js": "/react-game/static/js/2.3e3f561b.chunk.js",
-    "static/js/2.3e3f561b.chunk.js.map": "/react-game/static/js/2.3e3f561b.chunk.js.map",
-    "static/js/3.d3043fd0.chunk.js": "/react-game/static/js/3.d3043fd0.chunk.js",
-    "static/js/3.d3043fd0.chunk.js.map": "/react-game/static/js/3.d3043fd0.chunk.js.map",
+    "main.css": "/react-game/static/css/main.2274bfb6.chunk.css",
+    "main.js": "/react-game/static/js/main.6dc1436c.chunk.js",
+    "main.js.map": "/react-game/static/js/main.6dc1436c.chunk.js.map",
+    "runtime-main.js": "/react-game/static/js/runtime-main.429cd531.js",
+    "runtime-main.js.map": "/react-game/static/js/runtime-main.429cd531.js.map",
+    "static/js/2.56fd03e7.chunk.js": "/react-game/static/js/2.56fd03e7.chunk.js",
+    "static/js/2.56fd03e7.chunk.js.map": "/react-game/static/js/2.56fd03e7.chunk.js.map",
+    "static/js/3.ae4fca7f.chunk.js": "/react-game/static/js/3.ae4fca7f.chunk.js",
+    "static/js/3.ae4fca7f.chunk.js.map": "/react-game/static/js/3.ae4fca7f.chunk.js.map",
     "index.html": "/react-game/index.html",
-    "static/css/main.c57e094a.chunk.css.map": "/react-game/static/css/main.c57e094a.chunk.css.map",
-    "static/js/2.3e3f561b.chunk.js.LICENSE.txt": "/react-game/static/js/2.3e3f561b.chunk.js.LICENSE.txt"
+    "static/css/main.2274bfb6.chunk.css.map": "/react-game/static/css/main.2274bfb6.chunk.css.map",
+    "static/js/2.56fd03e7.chunk.js.LICENSE.txt": "/react-game/static/js/2.56fd03e7.chunk.js.LICENSE.txt",
+    "static/media/cross.mp3": "/react-game/static/media/cross.dc6e954f.mp3",
+    "static/media/zero.mp3": "/react-game/static/media/zero.18b83a70.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.c21eff8e.js",
-    "static/js/2.3e3f561b.chunk.js",
-    "static/css/main.c57e094a.chunk.css",
-    "static/js/main.ced56824.chunk.js"
+    "static/js/runtime-main.429cd531.js",
+    "static/js/2.56fd03e7.chunk.js",
+    "static/css/main.2274bfb6.chunk.css",
+    "static/js/main.6dc1436c.chunk.js"
   ]
 }
